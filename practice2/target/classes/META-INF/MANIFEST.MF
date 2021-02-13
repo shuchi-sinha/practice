@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: practice2
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Shuchi.Sinha
+Implementation-Vendor-Id: com.shuchi
+Build-Jdk: 1.8.0_251
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/shuchi
+Created-By: Maven Integration for Eclipse
+

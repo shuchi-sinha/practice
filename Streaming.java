@@ -1,12 +1,9 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 class Streaming {
@@ -14,6 +11,7 @@ class Streaming {
     public static int[] reverseArray(int[] a) {
         int temp = 0;
         int size = a.length - 1;
+        
         for (int i = 0; i < size / 2; i++) {
             temp = a[i];
             a[i] = a[size - i];
@@ -84,9 +82,11 @@ class Streaming {
                 .reduce((name1, name2) -> name1.length() > name2.length() ? name1 : name2);
     }
 
-    public static void main(String args[]) {
+   /*  public static void main(String args[]) {
         int[] a = { 2, 3, 4, 6, 1, 0, 23, 19 };// Arrays.asList
         int[] ra = reverseArray(a);
+        Arrays.sort(a);
+        System.out.println("sealing element "+sealingElement(a, 7));
         Arrays.stream(ra).forEach(it -> System.out.print(it + " "));
         System.out.println(" square of numbers > 25");
         Function<Integer, Integer> TO_SQUARE = num -> num * num;
@@ -108,6 +108,20 @@ class Streaming {
         System.out.println(sm.similarBalance(input).toString());
         System.out.print("Customer having longest name ");
         System.out.println(sm.longestNameCustomer(input));
-
     }
+    */
+    //sealing element from an array i.e {2,5,7,8,10,13}, target=9 return 10 smallest element>target
+    public static int sealingElement(int[] a, int target){
+        //int[] a = { 2, 3, 4, 6, 1, 0, 23, 19 }
+        int n=a.length;int l=0,h=n-1;
+        int mid=0;
+        while (l<=h && mid<a.length){
+            mid=l+h/2;
+            if (a[mid]<target)
+            l=mid+1;
+       else if (a[mid]>=target) h=mid-1;
+    }
+        return a[mid];
+    }
+    
 }
